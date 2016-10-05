@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+
+<!-- Mirrored from localhost/wordpress/es/2016/07/30/comparacion-de-sistemas-de-archivos-en-memoria-ram/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 01 Oct 2016 05:41:33 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="../../../../../../../gmpg.org/xfn/11.html">
+<link rel="pingback" href="../../../../../xmlrpc.php">
+
+<title>Comparación de sistemas de archivos en memoria RAM &#8211; Auroralilium</title>
+<link rel='dns-prefetch' href='../../../../../../../fonts.googleapis.com/index.html' />
+<link rel='dns-prefetch' href='../../../../../../../s.w.org/index.html' />
+<link rel="alternate" type="application/rss+xml" title="Auroralilium &raquo; Feed" href="../../../../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Auroralilium &raquo; Comments Feed" href="../../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Auroralilium &raquo; Comparación de sistemas de archivos en memoria RAM Comments Feed" href="http://localhost/wordpress/es/2016/07/30/comparacion-de-sistemas-de-archivos-en-memoria-ram/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/localhost\/wordpress\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6.1"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='sfmsb-style-css'  href='../../../../../wp-content/plugins/simple-follow-me-social-buttons-widget/assets/css/style6765.css?ver=3.3.3' type='text/css' media='all' />
+<link rel='stylesheet' id='sfmsb-icons-css'  href='../../../../../wp-content/plugins/simple-follow-me-social-buttons-widget/assets/css/icons6765.css?ver=3.3.3' type='text/css' media='all' />
+<link rel='stylesheet' id='beetle-stylesheet-css'  href='../../../../../wp-content/themes/beetle/stylec64e.css?ver=1.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='genericons-css'  href='../../../../../wp-content/themes/beetle/css/genericons/genericons5589.css?ver=3.4.1' type='text/css' media='all' />
+<link rel='stylesheet' id='beetle-default-fonts-css'  href='../../../../../../../fonts.googleapis.com/css75e4.css?family=Open+Sans%3A400%2C400italic%2C700%2C700italic&amp;subset=latin%2Clatin-ext' type='text/css' media='all' />
+<link rel='stylesheet' id='themezee-related-posts-css'  href='http://localhost/wordpress/wp-content/themes/beetle/css/themezee-related-posts.css?ver=20160421' type='text/css' media='all' />
+<script type='text/javascript' src='../../../../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../../../wp-content/plugins/simple-follow-me-social-buttons-widget/assets/js/front-widget6765.js?ver=3.3.3'></script>
+<!--[if lt IE 9]>
+<script type='text/javascript' src='http://localhost/wordpress/wp-content/themes/beetle/js/html5shiv.min.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript'>
+/* <![CDATA[ */
+var beetle_menu_title = "Menu";
+/* ]]> */
+</script>
+<script type='text/javascript' src='../../../../../wp-content/themes/beetle/js/navigation7c13.js?ver=20160719'></script>
+<link rel='https://api.w.org/' href='../../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../../../xmlrpc0db0.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../../../wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Reparar historial con comandos repetidos' href='../fix-history-with-repeated-commands/index.html' />
+<link rel='next' title='No debería de haber LiveDVD de Gentoo o iso' href='../../../08/20/no-deberia-de-haber-livedvd-de-gentoo-ni-tampoco-deberia-venir-con-lili/index.html' />
+<meta name="generator" content="WordPress 4.6.1" />
+<link rel="canonical" href="index.html" />
+<link rel='shortlink' href='http://localhost/wordpress/es/?p=81' />
+<link rel="alternate" type="application/json+oembed" href="http://localhost/wordpress/es/wp-json/oembed/1.0/embed?url=http%3A%2F%2Flocalhost%2Fwordpress%2Fes%2F2016%2F07%2F30%2Fcomparacion-de-sistemas-de-archivos-en-memoria-ram%2F" />
+<link rel="alternate" type="text/xml+oembed" href="http://localhost/wordpress/es/wp-json/oembed/1.0/embed?url=http%3A%2F%2Flocalhost%2Fwordpress%2Fes%2F2016%2F07%2F30%2Fcomparacion-de-sistemas-de-archivos-en-memoria-ram%2F&amp;format=xml" />
+<style type="text/css">
+.qtranxs_flag_en {background-image: url(../../../../../wp-content/plugins/qtranslate-x/flags/gb.png); background-repeat: no-repeat;}
+.qtranxs_flag_es {background-image: url(../../../../../wp-content/plugins/qtranslate-x/flags/es.png); background-repeat: no-repeat;}
+</style>
+<link hreflang="en" href="http://localhost/wordpress/en/2016/07/30/comparacion-de-sistemas-de-archivos-en-memoria-ram/" rel="alternate" />
+<link hreflang="es" href="index.html" rel="alternate" />
+<link hreflang="x-default" href="http://localhost/wordpress/2016/07/30/comparacion-de-sistemas-de-archivos-en-memoria-ram/" rel="alternate" />
+<meta name="generator" content="qTranslate-X 3.4.6.8" />
+		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		<style type="text/css" id="custom-background-css">
+body.custom-background { background-image: url('../../../../../wp-content/uploads/2016/10/da1f17b7d6b2da25533adf82489454c4.jpg'); background-repeat: repeat; background-position: top left; background-attachment: scroll; }
+</style>
+</head>
+
+<body class="single single-post postid-81 single-format-standard custom-background">
+
+	<div id="page" class="hfeed site">
+
+		<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+		<div id="header-top" class="header-bar-wrap"></div>
+
+		<header id="masthead" class="site-header clearfix" role="banner">
+
+			<div class="header-main container clearfix">
+
+				<div id="logo" class="site-branding clearfix">
+
+										
+		<p class="site-title"><a href="../../../../index.html" rel="home">Auroralilium</a></p>
+
+						
+				</div><!-- .site-branding -->
+
+				<div class="header-widgets clearfix">
+
+					<style type="text/css">
+.qtranxs_widget ul { margin: 0; }
+.qtranxs_widget ul li
+{
+display: inline; /* horizontal list, use "list-item" or other appropriate value for vertical list */
+list-style-type: none; /* use "initial" or other to enable bullets */
+margin: 0 5px 0 0; /* adjust spacing between items */
+opacity: 0.5;
+-o-transition: 1s ease opacity;
+-moz-transition: 1s ease opacity;
+-webkit-transition: 1s ease opacity;
+transition: 1s ease opacity;
+}
+/* .qtranxs_widget ul li span { margin: 0 5px 0 0; } */ /* other way to control spacing */
+.qtranxs_widget ul li.active { opacity: 0.8; }
+.qtranxs_widget ul li:hover { opacity: 1; }
+.qtranxs_widget img { box-shadow: none; vertical-align: middle; display: initial; }
+.qtranxs_flag { height:12px; width:18px; display:block; }
+.qtranxs_flag_and_text { padding-left:20px; }
+.qtranxs_flag span { display:none; }
+</style>
+<aside id="qtranslate-3" class="header-widget qtranxs_widget">
+<ul class="language-chooser language-chooser-text qtranxs_language_chooser" id="qtranslate-3-chooser">
+<li class="lang-en"><a href="http://localhost/wordpress/en/2016/07/30/comparacion-de-sistemas-de-archivos-en-memoria-ram/" hreflang="en" title="English (en)" class="qtranxs_text qtranxs_text_en"><span>English</span></a></li>
+<li class="lang-es active"><a href="index.html" hreflang="es" title="Español (es)" class="qtranxs_text qtranxs_text_es"><span>Español</span></a></li>
+</ul><div class="qtranxs_widget_end"></div>
+</aside>
+				</div><!-- .header-widgets -->
+
+			</div><!-- .header-main -->
+
+			<div id="main-navigation-wrap" class="primary-navigation-wrap container">
+
+				<nav id="main-navigation" class="primary-navigation navigation clearfix" role="navigation">
+					<ul id="menu-main" class="main-navigation-menu"><li id="menu-item-240" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-240"><a target="_blank" href="../../../../../../../zcat.site.curl.pink/index.html">Mi diario (En inglés)</a></li>
+<li id="menu-item-343" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-343"><a target="_blank" href="../advertencia-antes-de-instalar-gentoo/index.html">Advertencias sobre Gentoo</a></li>
+<li id="menu-item-344" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-344"><a href="../../../../naipes-de-distros/index.html">Distros cards</a></li>
+<li id="menu-item-345" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-345"><a href="../../../../about/index.html">About Of</a></li>
+<li id="menu-item-346" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-346"><a href="../../../../about-me/index.html">About me</a></li>
+</ul>				</nav><!-- #main-navigation -->
+
+			</div>
+
+		</header><!-- #masthead -->
+
+		
+		<div id="content" class="site-content container clearfix">
+
+			
+		<div id="headimg" class="header-image">
+
+		
+			<img src="../../../../../wp-content/uploads/2016/08/new-cover-2.jpg" srcset="http://localhost/wordpress/wp-content/uploads/2016/08/new-cover-2.jpg 960w, http://localhost/wordpress/wp-content/uploads/2016/08/new-cover-2-300x102.jpg 300w, http://localhost/wordpress/wp-content/uploads/2016/08/new-cover-2-768x260.jpg 768w" width="960" height="325" alt="Auroralilium">
+
+		
+		</div>
+
+	
+	<section id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+				
+		
+<article id="post-81" class="post-81 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+
+	<header class="entry-header">
+
+		<h1 class="entry-title">Comparación de sistemas de archivos en memoria RAM</h1>
+		<div class="entry-meta"><span class="meta-date"><a href="index.html" title="08:16 08Sat, 30 Jul 2016 08:16:19 +000019." rel="bookmark"><time class="entry-date published updated" datetime="2016-07-30T08:16:19+00:00">30 de July de 2016</time></a></span><span class="meta-author"> <span class="author vcard"><a class="url fn n" href="../../../../author/admin/index.html" title="View all posts by admin" rel="author">admin</a></span></span><span class="meta-category"> <a href="../../../../category/uncategorized/index.html" rel="category tag">Uncategorized</a></span></div>
+	</header><!-- .entry-header -->
+
+	<img width="425" height="93" src="http://localhost/wordpress/wp-content/uploads/2016/07/ram_computer_memory_clip_art_10171.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="ram_computer_memory_clip_art_10171" srcset="http://localhost/wordpress/wp-content/uploads/2016/07/ram_computer_memory_clip_art_10171.jpg 425w, http://localhost/wordpress/wp-content/uploads/2016/07/ram_computer_memory_clip_art_10171-300x66.jpg 300w, http://localhost/wordpress/wp-content/uploads/2016/07/ram_computer_memory_clip_art_10171-420x93.jpg 420w" sizes="(max-width: 425px) 100vw, 425px" />
+	<div class="entry-content clearfix">
+
+		<h2>Introducción</h2>
+<p>Se probaron distintos sistemas de archivos como block device en RAM, el propósito fue para encontrar el sistema de archivos más veloz en la memoria RAM.</p>
+<p>Como antecedente está el sistema de archivos RAMFS usado para crear unidades de ramdisk , sin embargo RAMFS tiene el inconveniente de no poder controlar el espacio  por lo que actualmente fue desplazado en los sistemas GNU/Linux por <a href="https://pastebin.com/paiS2VGe">TMPFS</a>.</p>
+<h2><strong>Recursos y materiales usados:</strong></h2>
+<p>Estas son las caracteristicas del equipo usado:</p>
+<p><img class="aligncenter" src="http://resources.xdaya.com/systems.svg" width="687" height="314" /></p>
+<p style="text-align: left;">En Gentoo Linux se utilizó el software llamado phoronix-test-suite 6.2.1 como herramienta de benchmarking, las pruebas pueden ser reproducida sencillamente a travez de los comandos proporcionados  y comparadas gracias a que la aplicación así lo dispone y que la información de las pruebas fue subida al internet.</p>
+<p style="text-align: left;">Apesar de que frecuentemente se afirma que Gentoo es la distribución más rápida esto es meramente coincidencia y cualquier mejora sería despreciable.</p>
+<h2 style="text-align: center;">Loop device vs block device desde el mismo kernel</h2>
+<p>En esta prueba inicial se busca determinar si usar un ramdisk como block device o como loop device es mejor, en esta prueba se consiguió un rendimiento practicamente igual, por lo que un método u otro puede usarse sin problemas.</p>
+<p><strong>Paso 1. Montar un block device desde la RAM</strong></p>
+<p>Se recompiló el kernel de Linux para soportar unidades virtuales de RAM por defecto por lo que la unidad /dev/ram0 quedó disponible al cargar el módulo brd con el siguiente comando:</p>
+<p>modprobe brd rd_size=10485760</p>
+<p>Seguido se formateó /dev/ram0 a ext2 y finalmente se realizó el benchmarking correspondiente:</p>
+<p><a href="http://openbenchmarking.org/result/1606232-GA-EXT2IOZ3470" target="_blank">benchmark1</a></p>
+<p><strong>Paso 2. Montar un loop device desde TMPFS</strong></p>
+<p>Se creó un archivo de 10GB en la memoria RAM con el siguiente comando:</p>
+<p>dd if=/dev/zero of=/tmp/im.img bs=32768 seek=305175 count=0</p>
+<p>Se le aplicó formato de ext2 con</p>
+<p>mkfs.ext2 /tmp/im.img</p>
+<p>Se añadió como loop device</p>
+<p>losetup -f /tmp/im.img</p>
+<p>Finalmente se montó  en la ruta del entorno de pruebas</p>
+<p><a href="http://openbenchmarking.org/result/1606234-GA-XIP10IOZ257">benchmark2</a></p>
+<p>En el siguiente link se puede ver la comparasión</p>
+<p>http://openbenchmarking.org/result/1608097-GA-MERGE856751</p>
+<p><strong>Observaciones:</strong></p>
+<p>El rendimiento no se inclina ni a favor de uno ni del otro pues en un 50% de las veces tanto uno como otro tuvo un mejor rendimiento en las mismas pruebas, resultado esperado en cuanto que comprueba que produce el mismo rendimiento usar un block device del kernel (/dev/ram0) o un loop device desde /tmp con TMPFS</p>
+<p>Finalmente la diferencias en la velocidad de escritura son relativamente minimas a comparasión con los otros sistemas de archivos.</p>
+<h2>Pruebas de rendimiento entre los distintos sistemas de archivos</h2>
+<p>Estas pruebas son la parte escencial de esta investigación, donde se compararon los sistemas de archivos EXT4, EXT2, F2FS, XFS  y JFS principalmente.</p>
+<h3><strong>FS-Mark</strong></h3>
+<p>Esta  gráfica es una muestra de los resultados de esta prueba llamada FS-Mark, donde free-fs-mark  es nuestro control de la prueba -ya que es un sistema de archivos <a href="https://pastebin.com/paiS2VGe">TMFPS</a>&#8211; y test2 es el sistema XFS.</p>
+<p>&nbsp;</p>
+<p><img class="aligncenter" src="http://resources.xdaya.com/1.svg" width="600" height="414" /></p>
+<p><img class="aligncenter" src="http://resources.xdaya.com/2.svg" width="600" height="368" /></p>
+<p><img class="aligncenter" src="http://resources.xdaya.com/3.svg" width="600" height="414" /></p>
+<p><strong>Ext2-fs obtuvo el mejor rendimiento</strong> en todas las pruebas y adicionalmente obtuvo un mejor rendimiento en las pruebas con No Sync,  seguido el segundo mejor rendimiento lo obtuvo el sistema de archivos F2FS  (TOSHIBA MQ01ABD1), y el tercer mejor rendimiento fue de JFS. <u>Vale la pena mencionar que EXT2 era el formato por defecto que se asignaba a los RAMFS antes</u></p>
+<p>http://openbenchmarking.org/result/1606256-GA-MERGE294086</p>
+<h3><strong>AIO Stress</strong></h3>
+<p>AIO Stress es la prueba más básica que se puede hacer de I/O y en la siguiente gráfica se pueden apreciar los resultados:</p>
+<p><img class="aligncenter size-full wp-image-1760" src="http://i.imgur.com/m5IEgc2.png" alt="Screenshot from 2016-06-25 14-11-58" width="685" height="428" /></p>
+<p>En escritura aleatorea ext2 resultó ser el más rápido, luego ext4, y en tercer lugar F2FS</p>
+<p><img class="aligncenter size-full wp-image-1763" src="http://i.imgur.com/mvisWTz.png" alt="Screenshot from 2016-06-25 14-46-36" width="644" height="193" /></p>
+<p>http://openbenchmarking.org/result/1606256-GA-MERGE320617</p>
+<h3>Dbench</h3>
+<p>Es una simulación de un servidor CIFS o NFS donde se simula (sin usar la red) los clientes y aplicaciones que puede tener al mismo tiempo antes de que empieze a haber lag , solo se enfoca en el sistema de archivos.</p>
+<p>En estas pruebas se repiten 3 veces TOSHIBA MQ01ABD1 donde el de la primer posición es el sistema de archivos JFS, el de la segunda es EXT2 , y el de la tercera posición es F2FS y finalmente test3 corresponde a XFS.</p>
+<p><img class="aligncenter size-full wp-image-1758" src="http://i.imgur.com/iGwCJUZ.png" alt="Screenshot from 2016-06-25 13-23-30" width="705" height="477" /></p>
+<p>Esta  gráfica  es una muestra de  los resultados. No es sino hasta con 12 hilos que en general los sistemas de archivos obtienen su máximo rendimiento incluyendo  nuestro sistema de control (free-dbench).</p>
+<p>A partir de estos resultados se concluye que <strong>EXT2 es el  sistema de archivos con el mejor rendimiento</strong> para este tipo de operaciones, seguido de F2FS, y luego ocurre una variación; JFS es el tercero más rápido para 1, 6 y 12 hilos, empero empieza a estar en desventaja a partir de 48 hilos donde ext4 logra superarlo.</p>
+<p>http://openbenchmarking.org/result/1606251-GA-MERGE272074</p>
+<h3>IO Zone</h3>
+<p>Io Zone permite hacer un benchmark del rendimiento de un sistema de archivos con archivos de distintos tamaños.</p>
+<p><img class="aligncenter size-large wp-image-1765" src="http://i.imgur.com/FkYaEZX.png" alt="Screenshot from 2016-06-25 22-10-36" width="900" height="459" /></p>
+<p>http://openbenchmarking.org/result/1606267-GA-MERGE129407</p>
+<p>EXT4 y EXT2 se mantuvieron en un rango similar, sin embargo EXT2 se mostró superior a final de cuentas. <strong>De forma general EXT2 fue el mejor.</strong> Para archivos grandes XFS fue el mejor, sin embargo JFS destacó demasiado así que lo dejo como el segundo mejor de esta prueba.</p>
+<h2>Optimizaciones intentadas:</h2>
+<p>Se probó cambiar el scheduler a deadline para JFS sin obtener realmente mejora.</p>
+<p>También los dos parametros de la cache de los discos fueron  fijados a cero y afectó el rendimiento de todas las pruebas tanto en block device del kernel como en loop device montado como archivo.</p>
+<p><strong>Raids 0:</strong></p>
+<p>Tratando de superar el cuello de botella que tienen los sistemas de archivos XIP trate de crear un raid de software creando distintas particiones en la memoria RAM, supuestamente el cuello de botella en un sistema de archivos ext2 sería debido a que necesita mayor escritura en el primer superbloque.</p>
+<p>Se creo un raid 0 de 6 particiones virtuales donde los archivos más grandes perdieron en rendimiento mientras que los archivos más pequeños la diferencia era minima a no haber montado el raid.</p>
+<p>Conclusiones:</p>
+<p>EXT2 fue el mejor de forma general y en escritura aleatorea. JFS es muy malo para la escritura aleatorea pero bueno en escritura lineal con archivos pequeños. XFS es la mejor opción para manejar archivos grandes.</p>
+<p>Queda pendiente investigar el sistema de archivos Reiser4 que resulta muy prometedor pero que implica conseguir un kernel vanilla, parcharlo y compilarlo.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+		
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+
+				
+	<nav class="navigation post-navigation" role="navigation">
+		<h2 class="screen-reader-text">Post navigation</h2>
+		<div class="nav-links"><div class="nav-previous"><a href="../fix-history-with-repeated-commands/index.html" rel="prev"><span class="screen-reader-text">Previous Post:</span>Reparar historial con comandos repetidos</a></div><div class="nav-next"><a href="../../../08/20/no-deberia-de-haber-livedvd-de-gentoo-ni-tampoco-deberia-venir-con-lili/index.html" rel="next"><span class="screen-reader-text">Next Post:</span>No debería de haber LiveDVD de Gentoo o iso</a></div></div>
+	</nav>
+	</footer><!-- .entry-footer -->
+
+</article>
+
+<div id="comments" class="comments-area">
+
+	
+	
+	
+					<div id="respond" class="comment-respond">
+			<h3 id="reply-title" class="comment-reply-title"><span>Leave a Reply</span> <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small></h3>				<form action="http://localhost/wordpress/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+					<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" aria-required='true' required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" aria-required='true' required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='81' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p>				</form>
+					</div><!-- #respond -->
+		
+</div><!-- #comments -->
+		
+		</main><!-- #main -->
+	</section><!-- #primary -->
+	
+		<section id="secondary" class="sidebar widget-area clearfix" role="complementary">
+
+		<aside id="calendar-3" class="widget widget_calendar clearfix"><div id="calendar_wrap" class="calendar_wrap"><table id="wp-calendar">
+	<caption>July 2016</caption>
+	<thead>
+	<tr>
+		<th scope="col" title="Monday">M</th>
+		<th scope="col" title="Tuesday">T</th>
+		<th scope="col" title="Wednesday">W</th>
+		<th scope="col" title="Thursday">T</th>
+		<th scope="col" title="Friday">F</th>
+		<th scope="col" title="Saturday">S</th>
+		<th scope="col" title="Sunday">S</th>
+	</tr>
+	</thead>
+
+	<tfoot>
+	<tr>
+		<td colspan="3" id="prev" class="pad">&nbsp;</td>
+		<td class="pad">&nbsp;</td>
+		<td colspan="3" id="next"><a href="http://localhost/wordpress/es/2016/08/">Aug &raquo;</a></td>
+	</tr>
+	</tfoot>
+
+	<tbody>
+	<tr>
+		<td colspan="4" class="pad">&nbsp;</td><td>1</td><td>2</td><td>3</td>
+	</tr>
+	<tr>
+		<td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td>
+	</tr>
+	<tr>
+		<td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td>
+	</tr>
+	<tr>
+		<td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td>
+	</tr>
+	<tr>
+		<td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td><a href="http://localhost/wordpress/es/2016/07/30/" aria-label="Posts published on July 30, 2016">30</a></td><td>31</td>
+	</tr>
+	</tbody>
+	</table></div></aside><aside id="tag_cloud-3" class="widget widget_tag_cloud clearfix"><div class="widget-header"><h3 class="widget-title">Tags</h3></div><div class="tagcloud"><a href='../../../../tag/gentoo/index.html' class='tag-link-10 tag-link-position-1' title='1 topic' style='font-size: 8pt;'>Gentoo</a>
+<a href='../../../../tag/install-gentoo/index.html' class='tag-link-11 tag-link-position-2' title='1 topic' style='font-size: 8pt;'>install gentoo</a>
+<a href='../../../../tag/iso/index.html' class='tag-link-12 tag-link-position-3' title='1 topic' style='font-size: 8pt;'>iso</a>
+<a href='../../../../tag/livecd/index.html' class='tag-link-13 tag-link-position-4' title='1 topic' style='font-size: 8pt;'>livecd</a></div>
+</aside>
+	</section><!-- #secondary -->
+	
+	
+	</div><!-- #content -->
+	
+	
+	<div id="footer" class="footer-wrap">
+	
+		<footer id="colophon" class="site-footer clearfix" role="contentinfo">
+
+			<div id="footer-text" class="site-info">
+				
+	<span class="credit-link">
+		Powered by <a href="../../../../../../../wordpress.org/index.html" title="WordPress">WordPress</a> and <a href="../../../../../../../themezee.com/themes/beetle/index.html" title="Beetle WordPress Theme">Beetle</a>.	</span>
+
+				</div><!-- .site-info -->
+			
+			
+		</footer><!-- #colophon -->
+		
+	</div>
+
+</div><!-- #page -->
+
+<script type='text/javascript' src='http://localhost/wordpress/wp-includes/js/comment-reply.min.js?ver=4.6.1'></script>
+<script type='text/javascript' src='../../../../../wp-includes/js/wp-embed.min1c9b.js?ver=4.6.1'></script>
+
+</body>
+
+<!-- Mirrored from localhost/wordpress/es/2016/07/30/comparacion-de-sistemas-de-archivos-en-memoria-ram/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 01 Oct 2016 05:41:33 GMT -->
+</html>

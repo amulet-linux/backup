@@ -1,0 +1,67 @@
+HTTrack3.48-21 launched on Sat, 01 Oct 2016 00:40:04 at http://localhost/wordpress
+(winhttrack http://localhost/wordpress -O "/home/amulet/websites/backup" -Y -%v -r3 )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+00:40:32	Error: 	"Method Not Allowed" (405) at link localhost/wordpress/xmlrpc.php (from localhost/wordpress/)
+00:40:34	Error: 	"Not Found" (404) at link fonts.googleapis.com/ (from localhost/wordpress/)
+00:40:35	Warning: 	Found for s.w.org/
+00:40:35	Warning: 	File has moved from s.w.org/ to https://wordpress.org/
+00:40:42	Warning: 	Found for localhost/wordpress/en/
+00:40:42	Warning: 	File has moved from localhost/wordpress/en/ to http://localhost/wordpress/
+00:41:10	Warning: 	Found for localhost/wordpress/2016/07/30/advertencia-antes-de-instalar-gentoo/
+00:41:10	Warning: 	File has moved from localhost/wordpress/2016/07/30/advertencia-antes-de-instalar-gentoo/ to http://localhost/wordpress/es/2016/07/30/advertencia-antes-de-instalar-gentoo/
+00:41:12	Warning: 	Found for localhost/wordpress/naipes-de-distros/
+00:41:12	Warning: 	File has moved from localhost/wordpress/naipes-de-distros/ to http://localhost/wordpress/es/naipes-de-distros/
+00:41:12	Warning: 	Found for localhost/wordpress/about/
+00:41:12	Warning: 	File has moved from localhost/wordpress/about/ to http://localhost/wordpress/es/about/
+00:41:14	Warning: 	Found for localhost/wordpress/about-me/
+00:41:14	Warning: 	File has moved from localhost/wordpress/about-me/ to http://localhost/wordpress/es/about-me/
+00:41:15	Warning: 	Found for localhost/wordpress/2016/09/26/3-years-using-gentoo-linux/
+00:41:15	Warning: 	File has moved from localhost/wordpress/2016/09/26/3-years-using-gentoo-linux/ to http://localhost/wordpress/es/2016/09/26/3-years-using-gentoo-linux/
+00:41:17	Warning: 	Found for localhost/wordpress/author/admin/
+00:41:17	Warning: 	File has moved from localhost/wordpress/author/admin/ to http://localhost/wordpress/es/author/admin/
+00:41:18	Warning: 	Found for localhost/wordpress/category/desktop/
+00:41:18	Warning: 	File has moved from localhost/wordpress/category/desktop/ to http://localhost/wordpress/es/category/desktop/
+00:41:20	Warning: 	Found for localhost/wordpress/category/gentoo/
+00:41:20	Warning: 	File has moved from localhost/wordpress/category/gentoo/ to http://localhost/wordpress/es/category/gentoo/
+00:41:20	Warning: 	Found for localhost/wordpress/2016/07/30/i-donated-everything-to-linux-mint-although-i-use-gentoo/
+00:41:20	Warning: 	File has moved from localhost/wordpress/2016/07/30/i-donated-everything-to-linux-mint-although-i-use-gentoo/ to http://localhost/wordpress/es/2016/07/30/i-donated-everything-to-linux-mint-although-i-use-gentoo/
+00:41:22	Warning: 	Found for localhost/wordpress/category/uncategorized/
+00:41:22	Warning: 	File has moved from localhost/wordpress/category/uncategorized/ to http://localhost/wordpress/es/category/uncategorized/
+00:41:23	Warning: 	Found for localhost/wordpress/2016/07/30/fix-history-with-repeated-commands/
+00:41:23	Warning: 	File has moved from localhost/wordpress/2016/07/30/fix-history-with-repeated-commands/ to http://localhost/wordpress/es/2016/07/30/fix-history-with-repeated-commands/
+00:41:24	Warning: 	Found for localhost/wordpress/category/bash/
+00:41:24	Warning: 	File has moved from localhost/wordpress/category/bash/ to http://localhost/wordpress/es/category/bash/
+00:41:25	Warning: 	Found for localhost/wordpress/2016/07/30/nice-desktops-minimal/
+00:41:25	Warning: 	File has moved from localhost/wordpress/2016/07/30/nice-desktops-minimal/ to http://localhost/wordpress/es/2016/07/30/nice-desktops-minimal/
+00:41:26	Warning: 	Found for localhost/wordpress/2016/07/30/gentoo-netbook-kde/
+00:41:26	Warning: 	File has moved from localhost/wordpress/2016/07/30/gentoo-netbook-kde/ to http://localhost/wordpress/es/2016/07/30/gentoo-netbook-kde/
+00:41:27	Warning: 	Found for localhost/wordpress/category/portable/
+00:41:27	Warning: 	File has moved from localhost/wordpress/category/portable/ to http://localhost/wordpress/es/category/portable/
+00:41:27	Warning: 	Found for localhost/wordpress/2016/09/
+00:41:27	Warning: 	File has moved from localhost/wordpress/2016/09/ to http://localhost/wordpress/es/2016/09/
+00:41:27	Warning: 	Found for localhost/wordpress/tag/gentoo/
+00:41:27	Warning: 	File has moved from localhost/wordpress/tag/gentoo/ to http://localhost/wordpress/es/tag/gentoo/
+00:41:28	Warning: 	Found for localhost/wordpress/tag/install-gentoo/
+00:41:28	Warning: 	File has moved from localhost/wordpress/tag/install-gentoo/ to http://localhost/wordpress/es/tag/install-gentoo/
+00:41:29	Warning: 	Found for localhost/wordpress/tag/iso/
+00:41:29	Warning: 	File has moved from localhost/wordpress/tag/iso/ to http://localhost/wordpress/es/tag/iso/
+00:41:29	Warning: 	Found for localhost/wordpress/tag/livecd/
+00:41:29	Warning: 	File has moved from localhost/wordpress/tag/livecd/ to http://localhost/wordpress/es/tag/livecd/
+00:41:30	Warning: 	Moved Permanently for wordpress.org/robots.txt
+00:41:30	Warning: 	Redirected link is identical because of 'URL Hack' option: wordpress.org/robots.txt and https://wordpress.org/robots.txt
+00:41:30	Warning: 	Warning moved treated for wordpress.org/robots.txt (real one is https://wordpress.org/robots.txt)
+00:41:30	Warning: 	Moved Permanently for wordpress.org/
+00:41:30	Warning: 	Redirected link is identical because of 'URL Hack' option: wordpress.org/ and https://wordpress.org/
+00:41:30	Warning: 	File has moved from wordpress.org/ to https://wordpress.org/
+00:41:33	Error: 	"Not Found" (404) at link zcat.site.curl.pink/android-app://com.tumblr/tumblr/x-callback-url/blog?blogName=zcat-aurora (from zcat.site.curl.pink/)
+00:41:33	Error: 	"Not Found" (404) at link zcat.site.curl.pink/ios-app://305343404/tumblr/x-callback-url/blog?blogName=zcat-aurora (from zcat.site.curl.pink/)
+00:41:33	Warning: 	Link zcat.site.curl.pink/analytics.html not scanned (follow robots meta tag)
+00:41:33	Error: 	"Not Found" (404) at link https://themezee.com/themes/beetle/linkid.js (from https://themezee.com/themes/beetle/)
+
+HTTrack Website Copier/3.48-21 mirror complete in 1 minutes 29 seconds : 136 links scanned, 101 files written (3043036 bytes overall) [2531559 bytes received at 28444 bytes/sec], 955914 bytes transferred using HTTP compression in 29 files, ratio 26%, 3.1 requests per connection
+(5 errors, 51 warnings, 0 messages)
